@@ -1,0 +1,4 @@
+.next/
+.next/cache/
+node_modules/
+.env
