@@ -3,7 +3,7 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import { Camera, X } from 'lucide-react';
 
-export const NotificationModal = ({ isOpen, onClose, doctorName }: any) => {
+const NotificationModal = ({ isOpen, onClose, doctorName }: any) => {
   const router = useRouter();
 
   if (!isOpen) return null;
@@ -47,3 +47,5 @@ export const NotificationModal = ({ isOpen, onClose, doctorName }: any) => {
     </div>
   );
 };
+
+export default NotificationModal;
