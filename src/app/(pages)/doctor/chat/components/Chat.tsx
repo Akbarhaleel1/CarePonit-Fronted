@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Send, Phone, Video } from "lucide-react";
 import { io } from "socket.io-client";
+import Image from "next/image";
 
 interface SenderData {
   id: string;
@@ -211,7 +212,7 @@ const DoctorChatInterface: React.FC = () => {
               onClick={() => handlePatientSelect(patient)}
             >
               <div className="flex items-center space-x-4">
-                <img
+                <Image
                   src={'https://thumbs.dreamstime.com/b/patient-icon-vector-male-person-profile-avatar-symbol-medical-health-care-flat-color-glyph-pictogram-illustration-146789554.jpg'}
                   alt={patient.name}
                   className="w-12 h-12 rounded-full"
@@ -241,7 +242,7 @@ const DoctorChatInterface: React.FC = () => {
           <>
             <div className="bg-white border-b border-gray-200 p-4 flex items-center justify-between">
               <div className="flex items-center">
-                <img
+                <Image
                   src={'https://thumbs.dreamstime.com/b/patient-icon-vector-male-person-profile-avatar-symbol-medical-health-care-flat-color-glyph-pictogram-illustration-146789554.jpg'}
                   alt={selectedPatient.name}
                   className="w-12 h-12 rounded-full mr-4"

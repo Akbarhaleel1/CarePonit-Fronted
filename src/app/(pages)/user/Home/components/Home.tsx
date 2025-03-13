@@ -329,7 +329,7 @@ const Home = () => {
                   className="bg-white text-black rounded-xl p-6 md:p-8 shadow-lg w-72 md:w-80 flex-shrink-0 animate-scroll"
                 >
                   <p className="text-base md:text-lg mb-4">
-                    "{testimonial.text}"
+                    {testimonial.text}
                   </p>
                   <h4 className="font-semibold text-sm md:text-base">
                     {testimonial.name}
@@ -359,7 +359,7 @@ const Home = () => {
           <p className="text-black font-serif text-base lg:absolute lg:top-20 lg:left-[10px] max-w-md lg:max-w-none">
             At CarePoint, our goal is to transform emergency healthcare with
             cutting-edge technology. We connect patients, doctors, hospitals,
-            and ambulance drivers to deliver fast and efficient care when it's
+            and ambulance drivers to deliver fast and efficient care when its
             needed most.
           </p>
         </div>

@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { FaEnvelope, FaPhone, FaCalendar, FaClock } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface User {
   firstname: string;
@@ -226,7 +227,7 @@ const Appointments: React.FC = () => {
                 className="flex flex-col lg:flex-row items-center justify-between p-6 border-b border-gray-200 hover:bg-gray-50 transition duration-300 ease-in-out"
               >
                 <div className="flex flex-col lg:flex-row items-center lg:items-start lg:space-x-6 mb-4 lg:mb-0 w-full lg:w-2/3">
-                  <img
+                  <Image
                     src={
                       appointment.user.profilePic || "/api/placeholder/80/80"
                     }

@@ -1,9 +1,9 @@
-import MapComponent from "@/app/MapContainer/MapContainers"
+// import MapComponent from "@/app/MapContainer/MapContainers"
 
 const page = () => {
   return (
     <div>
-      <MapComponent/>
+      {/* <MapComponent/> */}
     </div>
   )
 }

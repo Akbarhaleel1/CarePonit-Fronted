@@ -4,6 +4,7 @@ import { PlusCircle, ArrowLeft, Camera } from 'lucide-react';
 import axiosInstance from '@/app/hooks/useApi';
 import axios from 'axios';
 import {useRouter} from 'next/navigation'
+import Image from 'next/image';
 
 
 interface FormData {
@@ -215,7 +216,7 @@ const AddProductPage = () => {
       {image && (
         <div className="mt-4">
           <p className="text-sm text-gray-400">Selected Image:</p>
-          <img
+          <Image
             src={URL.createObjectURL(image)}
             alt="Preview"
             className="mt-2 max-w-full h-auto rounded-lg"

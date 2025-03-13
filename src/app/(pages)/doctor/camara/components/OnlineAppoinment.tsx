@@ -304,7 +304,7 @@ const DoctorVideoCall = () => {
       <div className="w-64 bg-white shadow-md">
         <div className="p-4">
           <h2 className="text-xl font-semibold text-gray-800">
-            Doctor's Dashboard
+            Doctor Dashboard
           </h2>
         </div>
         <nav className="mt-4">
