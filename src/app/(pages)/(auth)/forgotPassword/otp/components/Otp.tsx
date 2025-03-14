@@ -1,4 +1,3 @@
-
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -6,17 +5,23 @@ import OtpImg from "../../../../../../../public/images/mobile-otp.gif";
 import axiosInstance from "@/app/hooks/useApi";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+
 const Otp = () => {
   const [otp, setOtp] = useState(["", "", "", ""]);
   const [timeLeft, setTimeLeft] = useState(60);
   const [canResend, setCanResend] = useState(false);
-
-  const params = new URLSearchParams(window.location.search);
-  const emailParam = params.get('email');
-  const roleParam = params.get('role');
-
+  const [emailParam, setEmailParam] = useState<string | null>(null);
+  const [roleParam, setRoleParam] = useState<string | null>(null);
 
   const router = useRouter();
+
+  // Use useEffect to access window.location.search on the client side
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setEmailParam(params.get('email'));
+    setRoleParam(params.get('role'));
+  }, []);
+
   useEffect(() => {
     if (timeLeft <= 0) {
       setCanResend(true);
@@ -26,7 +31,7 @@ const Otp = () => {
     const timer = setInterval(() => {
       setTimeLeft((prevTime) => prevTime - 1);
     }, 1000);
-    
+
     return () => clearInterval(timer);
   }, [timeLeft]);
 
@@ -53,12 +58,13 @@ const Otp = () => {
 
     try {
       const response = await axios.post("http://localhost:4000/user-service/forgotPassword", {
-        otp: otpCode,email:emailParam
+        otp: otpCode,
+        email: emailParam,
       });
       console.log("OTP verified successfully:", response.data);
       if (response) {
-        if(emailParam){
-          router.push(`/forgotPassword/newPassword?email=${encodeURIComponent(emailParam)}`);   
+        if (emailParam) {
+          router.push(`/forgotPassword/newPassword?email=${encodeURIComponent(emailParam)}`);
         }
       }
     } catch (error) {
@@ -68,7 +74,7 @@ const Otp = () => {
 
   const handleResend = async () => {
     try {
-      const response = await axiosInstance.post("/signup", { email: emailParam , role: roleParam});
+      const response = await axiosInstance.post("/signup", { email: emailParam, role: roleParam });
       if (response.data.success) {
         setTimeLeft(60); // Reset timer
         setCanResend(false);
@@ -93,7 +99,7 @@ const Otp = () => {
           className="mb-4"
         />
         <h1 className="text-3xl font-bold text-gray-800 mb-2">
-          Verification Code 
+          Verification Code
         </h1>
         <p className="text-gray-600 mb-4">Please enter the code sent to</p>
         <p className="text-gray-800 font-bold mb-6">{emailParam}</p>

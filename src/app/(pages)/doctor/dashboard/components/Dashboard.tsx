@@ -1,18 +1,28 @@
-import MyChart from "./DynamicChart"
-import { LayoutGridDemo } from "./GridLayout"
-import { SidebarDemo } from "./Sidebar"
+// import MyChart from "./DynamicChart"
+// import { LayoutGridDemo } from "./GridLayout"
+// import { SidebarDemo } from "./Sidebar"
 
-const dashboard = () => {
+// const dashboard = () => {
+//   return (
+//     <div className="">
+//       <div>
+
+//       </div>
+//       {/* <LayoutGridDemo/> */}
+//       {/* <MyChart /> */}
+//       <SidebarDemo/>
+//     </div>
+//   )
+// }
+
+// export default dashboard
+
+import React from 'react'
+
+const Dashboard = () => {
   return (
-    <div className="">
-      <div>
-
-      </div>
-      {/* <LayoutGridDemo/> */}
-      {/* <MyChart /> */}
-      <SidebarDemo/>
-    </div>
+    <div>Dashboard</div>
   )
 }
 
-export default dashboard
+export default Dashboard

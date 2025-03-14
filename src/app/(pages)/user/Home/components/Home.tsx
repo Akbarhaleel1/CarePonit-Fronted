@@ -16,7 +16,8 @@ const Home = () => {
   const words = `Your Health, Our Commitment`;
   const router = useRouter();
   const [user, setUser] = useState<any>(null);
-  const token = localStorage.getItem("token");
+  // const token = localStorage.getItem("token");
+  const token = ''
 
   useEffect(() => {
     const fetchUser = async () => {
